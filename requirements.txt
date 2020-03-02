@@ -86,7 +86,6 @@ lxml==4.4.1
 MarkupSafe==1.1.1
 matplotlib==3.1.1
 mccabe==0.6.1
-menuinst==1.4.16
 mglearn==0.1.7
 mistune==0.8.4
 mkl-fft==1.0.14
