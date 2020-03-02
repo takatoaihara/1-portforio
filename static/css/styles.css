@@ -1,0 +1,860 @@
+@charset "UTF-8";
+
+/* スマホ 320〜559px */
+
+html{
+    font-size: 100%
+}
+
+body{
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+    line-height: 1.7;
+    color: #252525;
+    margin: 0px;
+    padding: 0px;
+    background-color: #F0EBEB;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}
+
+img{
+    max-width:100%:
+}
+
+ul {
+  list-style: none;
+}
+
+.shadow{
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#ham-menu {
+    background-color: #fff; /*メニュー背景色*/
+    box-sizing: border-box;
+    height: 100%;
+    /*padding: 10px 40px; /*メニュー内左右上下余白*/
+    position: fixed;
+    right: -300px; /*メニュー横幅 width と合わせる*/
+    top: 0;
+    transition: transform 0.3s linear 0s; /*0.3s はアニメーションにかかる時間*/
+    width: 300px; /*メニュー横幅*/
+    z-index: 1000;
+}
+
+#menu-background {
+    background-color: #333; /*黒背景*/
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    transition: all 0.3s linear 0s; /*0.3s はアニメーションにかかる時間*/
+    width: 100%;
+    z-index: -1;
+}
+
+#menu-icon {
+    background-color: #1976D2; /*アイコン部分背景色*/
+    color: #ffffff; /*アイコン（フォント）色*/
+    cursor: pointer;
+    display: block;
+    font-size: 50px; /*アイコン（フォント）サイズ*/
+    height: 50px; /*アイコン縦高さ*/
+    line-height: 50px; /*縦位置中央化*/
+    position: fixed;
+    right: 0;
+    text-align: right;
+    top: 0;
+    width: 100%; /*アイコン横幅*/
+    transition: all 0.3s linear 0s; /* 0.3s はアニメーションにかかる時間*/
+    z-index: 1000;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+#menu-cb {
+    display: none; /*チェックボックス本体は消しておく*/
+}
+
+#menu-cb:checked ~ #ham-menu,
+#menu-cb:checked ~ #menu-icon {
+    transform: translate(-300px); /*メニュー本体横幅 width と合わせる*/
+}
+
+#menu-cb:checked ~ #menu-background {
+    opacity: 0.5;
+    z-index: 999;
+}
+
+.phone-header li{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  background: #EF5350;
+  border-radius: 50%;
+  transition: .3s;/*滑らかな動きに*/
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.12), 0 2px 2px 0 rgba(0,0,0,.24);/*影*/
+}
+
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f106';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  top: 3px;
+  left: 17px;
+}
+
+.main-nav{
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    list-style: none;
+    margin-right: 25px;
+}
+
+.main-nav li{
+    margin-left: 36px;
+}
+
+.main-nav a{
+    color: #FFFFFF;
+}
+
+.main-nav a:hover{
+    color: #0bd;
+}
+
+.page-header{
+    display: none;
+    justify-content: center;
+}
+
+.page-header-container{
+    display: flex;
+    justify-content: flex-end;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+    background-color: #1976d2;
+    height: 62px;
+    width: 560px;
+}
+
+.wrapper{
+    max-width: 560px;
+    margin-bottom: 10px;
+
+}
+
+.home-content{
+    display: flex;
+    /*text-align: center;*/
+    color: #ffffff;
+    background-color: #2196F3;
+    height: 150px;
+    padding-top: 50px;
+    width: 100%;
+}
+
+.home-content-img{
+    width:35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-content-img img{
+    height: 120px;
+    width: 120px;
+}
+
+.home-content-title{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+}
+
+.home-content-title-h2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-content-title h2{
+    /*font-size: 2rem;*/
+    margin: 0;
+}
+
+.home-content-title p{
+    /*font-size:1.5rem;*/
+    margin:0;
+}
+
+.page-title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-weight: bold;
+    border-bottom: solid 5px #0bd;
+    margin: 0;
+    padding-left: 10px;
+}
+
+
+.introduction{
+    background-color: #ffffff;
+}
+
+.introduction-container{
+    padding: 10px;
+
+}
+
+.introduction .container{
+    /*display: flex; */
+    /*justify-content: space-between; */
+    /*height: 250px; */
+    margin-bottom: 36px;
+
+}
+
+.introduction .container-last{
+    /*display: flex;*/
+    /*justify-content: space-between;*/
+    /*height: 250px;*/
+    margin-bottom: 0;
+}
+
+.introduction-img{
+    /*width: 50%;*/
+    /*padding-right: 16px;*/
+    height: 200px;
+}
+
+.introduction-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.introduction-img .pic1{
+    object-position: 50% 50%;
+}
+
+.introduction-text{
+    /*width: 50%;
+    padding-left: 16px;*/
+}
+
+.introduction-text p{
+    /*margin: 0;*/
+}
+
+.portforio{
+    background-color: #ffffff;
+}
+
+.portforio-main{
+    display: flex;
+    justify-content: flex-start;
+    /*padding: 36px;*/
+}
+
+.portforio-container{
+    width: 25%;
+    position: relative;
+}
+
+.portforio-container a{
+    text-decoration: none;
+    display: inline;
+}
+
+.portforio-container a:hover{
+    color: #0bd;
+}
+
+.portforio-container img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.portforio-container p{
+    position: absolute;
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    /*font-weight: bold;*/
+    /*font-size:1.25rem;*/
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    -ms-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    margin:0;
+    padding:0;
+}
+
+.contact{
+    background-color: #ffffff;
+}
+
+.contact-main{
+    display: flex;
+    /*height: 200px;
+    padding: 36px;*/
+}
+
+.contact-container{
+    display: flex;
+    justify-content: center;
+    width: 25%;
+    /*padding: 36px;*/
+    background-color: #2196F3;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container a{
+    color: #FFFFFF;
+}
+
+.contact-container a:hover{
+    color: #0bd;
+}
+
+.contact-container p{
+    margin: 0;
+    /*font-size: 2rem;*/
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-icon{
+    font-size: 2em;
+}
+
+.footer{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.footer-text p{
+    margin: 0;
+}
+
+/* ------------タブレット 560〜959px---------------- */
+@media screen and (min-width: 560px) {
+
+    .phone-header{
+        display: none;
+    }
+
+    #page_top{
+        display: none;
+    }
+
+    .main-nav{
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        list-style: none;
+        margin-right: 25px;
+    }
+
+    .main-nav li{
+        margin-left: 36px;
+    }
+
+    .main-nav a{
+        color: #FFFFFF;
+    }
+
+    .main-nav a:hover{
+        color: #0bd;
+    }
+
+    .page-header{
+        display: flex;
+        justify-content: center;
+    }
+
+    .page-header-container{
+        display: flex;
+        justify-content: flex-end;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+        background-color: #1976d2;
+        height: 62px;
+        width: 560px;
+    }
+
+    .wrapper{
+        max-width: 560px;
+        margin: 30px auto 45px;
+
+    }
+
+    .home-content{
+        display: flex;
+        text-align: center;
+        color: #ffffff;
+        background-color: #2196F3;
+        height: 200px;
+    }
+
+    .home-content-img{
+        width:35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-content-img img{
+        height: 160px;
+        width: 160px;
+    }
+
+    .home-content-title{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 15px;
+    }
+
+    .home-content-title-h2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-content-title h2{
+        font-size: 2rem;
+        margin: 0;
+    }
+
+    .home-content-title p{
+        font-size:1.5rem;
+        margin:0;
+    }
+
+    .page-title {
+        font-size: 3rem;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        font-weight: bold;
+        border-bottom: solid 5px #0bd;
+        margin: 0;
+        padding-left: 36px;
+    }
+
+
+    .introduction{
+        background-color: #ffffff;
+    }
+
+    .introduction-container{
+        padding: 36px;
+
+    }
+
+    .introduction .container{
+        /*display: flex; */
+        /*justify-content: space-between; */
+        /*height: 250px; */
+        margin-bottom: 36px;
+
+    }
+
+    .introduction .container-last{
+        /*display: flex;*/
+        /*justify-content: space-between;*/
+        /*height: 250px;*/
+        margin-bottom: 0;
+    }
+
+    .introduction-img{
+        /*width: 50%;*/
+        /*padding-right: 16px;*/
+        height: 250px;
+    }
+
+    .introduction-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .introduction-img .pic1{
+        object-position: 50% 50%;
+    }
+
+    .introduction-text{
+        /*width: 50%;
+        padding-left: 16px;*/
+    }
+
+    .introduction-text p{
+        /*margin: 0;*/
+    }
+
+    .portforio{
+        background-color: #ffffff;
+    }
+
+    .portforio-main{
+        display: flex;
+        justify-content: space-between;
+        /*padding: 36px;*/
+    }
+
+    .portforio-container{
+        width: 25%;
+        position: relative;
+    }
+
+    .portforio-container a{
+        text-decoration: none;
+        display: inline;
+    }
+
+    .portforio-container a:hover{
+        color: #0bd;
+    }
+
+    .portforio-container img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .portforio-container p{
+        position: absolute;
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        font-size:1.25rem;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        -ms-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:0;
+    }
+
+    .contact{
+        background-color: #ffffff;
+    }
+
+    .contact-main{
+        display: flex;
+        /*height: 200px;
+        padding: 36px;*/
+    }
+
+    .contact-container{
+        display: flex;
+        justify-content: center;
+        width: 25%;
+        /*padding: 36px;*/
+        background-color: #2196F3;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-container a{
+        color: #FFFFFF;
+    }
+
+    .contact-container a:hover{
+        color: #0bd;
+    }
+
+    .contact-container p{
+        margin: 0;
+        /*font-size: 2rem;*/
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contact-icon{
+        font-size: 3em;
+    }
+}
+/*----------------PC 960px以上----------------------*/
+@media screen and (min-width: 960px) {
+
+    #page_top{
+        display: none;
+    }
+
+    .phone-header{
+        display: none;
+    }
+
+    .main-nav{
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        list-style: none;
+        margin-right: 25px;
+    }
+
+    .main-nav li{
+        margin-left: 36px;
+    }
+
+    .main-nav a{
+        color: #FFFFFF;
+    }
+
+    .main-nav a:hover{
+        color: #0bd;
+    }
+
+    .page-header{
+        display: flex;
+        justify-content: center;
+    }
+
+    .page-header-container{
+        display: flex;
+        justify-content: flex-end;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.18);
+        background-color: #1976d2;
+        height: 62px;
+        width: 960px;
+    }
+
+    .wrapper{
+        max-width: 960px;
+        margin: 30px auto 45px;
+
+    }
+
+    .home-content{
+        display: flex;
+        text-align: center;
+        color: #ffffff;
+        background-color: #2196F3;
+        height: 400px;
+    }
+
+    .home-content-img{
+        width:35%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .home-content-img img{
+        height: 300px;
+        width: 300px;
+    }
+
+    .home-content-title{
+        width: 65%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 35px;
+    }
+
+    .home-content-title-h2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .home-content-title h2{
+        font-size: 4rem;
+        margin: 0;
+    }
+
+    .home-content-title p{
+        font-size:3.5rem;
+        margin:0;
+    }
+
+    .page-title {
+        font-size: 4rem;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        font-weight: bold;
+        border-bottom: solid 5px #0bd;
+        margin: 0;
+        padding-left: 36px;
+    }
+
+
+    .introduction{
+        background-color: #ffffff;
+    }
+
+    .introduction-container{
+        padding: 36px;
+
+    }
+
+    .introduction .container{
+        display: flex;
+        justify-content: space-between;
+        height: 250px;
+        margin-bottom: 36px;
+
+    }
+
+    .introduction .container-last{
+        display: flex;
+        justify-content: space-between;
+        height: 250px;
+        margin-bottom: 0;
+    }
+
+    .introduction-img{
+        width: 50%;
+        padding-right: 16px;
+    }
+
+    .introduction-img img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 3px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .introduction-img .pic1{
+        object-position: 50% 50%;
+    }
+
+    .introduction-text{
+        width: 50%;
+        padding-left: 16px;
+    }
+
+    .introduction-text p{
+        margin: 0;
+    }
+
+    .portforio{
+        background-color: #ffffff;
+    }
+
+    .portforio-main{
+        display: flex;
+        justify-content: flex-start;
+        padding: 36px;
+    }
+
+    .portforio-container{
+        width: 25%;
+        position: relative;
+    }
+
+    .portforio-container a:hover{
+        color: #0bd;
+    }
+
+    .portforio-container img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .portforio-container p{
+        position: absolute;
+        width: 100%;
+        color: white;
+        font-weight: bold;
+        font-size:1.25rem;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        -ms-transform: translate(-50%,-50%);
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        margin:0;
+        padding:0;
+    }
+
+    .contact{
+        background-color: #ffffff;
+    }
+
+    .contact-main{
+        display: flex;
+        height: 200px;
+        padding: 36px;
+    }
+
+    .contact-container{
+        display: flex;
+        justify-content: center;
+
+        width: 25%;
+        padding: 36px;
+        background-color: #2196F3;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-container a{
+        color: #FFFFFF;
+    }
+
+    .contact-container a:hover{
+        color: #0bd;
+    }
+
+    .contact-container p{
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contact-icon{
+        font-size: 6em;
+    }
+}
+
+
+

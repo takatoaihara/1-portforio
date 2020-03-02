@@ -1,0 +1,190 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>こんにちは。私は相原隆斗です。</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="phone-header">
+        <input id="menu-cb" type="checkbox" value="off">
+        <label id="menu-icon" for="menu-cb">≡</label>
+        <label id="menu-background" for="menu-cb"></label>
+        <div id="ham-menu">
+            <ul>
+                <li><a href="#introduction">自己紹介</a></li>
+                <li><a href="#portforio">ポートフォリオ</a></li>
+                <li><a href="#contact">コンタクト</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="page_top"><a href="#"></a></div>
+
+
+    <div class="page-header">
+        <div class="page-header-container">
+            <ul class="main-nav">
+                <li><a href="#introduction">自己紹介</a></li>
+                <li><a href="#portforio">ポートフォリオ</a></li>
+                <li><a href="#contact">コンタクト</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="home-content wrapper shadow">
+        <div class="home-content-img">
+            <img src="{% static 'image/1544078504-1.png' %}" alt="">
+        </div>
+        <div class="home-content-title">
+            <div class="home-content-title-h2">
+                <h2>Hi ________</h2>
+                <h2>I'm Takato Aihara</h2>
+            </div>
+            <div class="home-content-title-p">
+                <p>Welcome to my page</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="introduction wrapper shadow">
+        <a name="introduction">
+            <h2 class="page-title">自己紹介</h2>
+        </a>
+        <div class="introduction-container">
+            <div class="container">
+                <div class="introduction-img">
+                    <img src="{% static 'image/pic1.jpg' %}">
+                </div>
+                <div class="introduction-text">
+                    <p>初めまして、相原隆斗です。</p>
+                    <p>１９９５年９月２日に兵庫県の田舎に生まれました。</p>
+                    <p>趣味は読書・映画鑑賞・ゲーム・散歩です。</p>
+                    <p>現在、PythonとDjangoでWEBサイトを製作しています。</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="introduction-img">
+                    <img src="{% static 'image/study.jpg' %}">
+                </div>
+                <div class="introduction-text">
+                    <p>プログラミングは本とインターネットを使用し独学で習得しました。</p>
+                    <p>プログラミング歴は約２年で、HTML/CSS、JavaScript、jQuery、C#、Ruby、Pythonなど様々学習し、その中でPythonが一番好きです。</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="introduction-img">
+                    <img src="{% static 'image/pic3.jpg' %}">
+                </div>
+                <div class="introduction-text">
+                    <p>以前は、"義肢装具士"という、体の不自由な人に義足や装具というものを作っていました。</p>
+                    <p>テレビでパラリンピック選手がカーボンの義足で走っている姿や、中年の人がコルセットを付けているのを見たことがあるかと思います。</p>
+                    <p>患者さんに対して製作と営業は、苦しくもやりがいのある仕事でした。</p>
+
+                </div>
+            </div>
+            <div class="container">
+                <div class="introduction-img">
+                    <img src="{% static 'image/Prosthesis.jpg' %}" alt="">
+                </div>
+                <div class="introduction-text">
+                    <p>私がプログラマになろうと思ったきっかけは、営業先の病院で機械を使った歩行分析現場を見たことです。</p>
+                    <p>それまでの歩行分析は人間の目で行っており、結果が経験数によって異なっていしまいます。</p>
+                    <p>しかし、機械で歩行分析を行えば、人によって結果が変わることはないし、患者さんや義肢装具士にとって有益になると思いました。</p>
+                    <p>なのでプログラミングを勉強し始めました。</p>
+                </div>
+            </div>
+            <div class="container">
+                <div class="introduction-img">
+                    <img src="{% static 'image/company.jpg' %}" alt="">
+                </div>
+                <div class="introduction-text">
+                    <p>現在は人工知能に興味があり、機械学習の勉強をしています。</p>
+                    <p>また、趣味でカードゲームをpythonでプログラミングして遊んでいます。</p>
+                    <p>プログラミングは"自己表現できるツールの一つ"とか、"パズルのように組み合わせるゲーム"とかいろいろな一面があって楽しいなぁとぼんやり考えています。</p>
+                    <p>下に私がポートフォリオとして作成したものもあるので良ければ見てみてください。</p>
+                </div>
+            </div>
+            <div class="container-last">
+                <div class="introduction-img">
+                    <img src="{% static 'image/book.jpg' %}" alt="">
+                </div>
+                <div class="introduction-text">
+                    <p>学習に使用した主なサイト・本</p>
+                    <p>・サイト</p>
+                    <p><a href="https://prog-8.com/" target="_blank" rel="noopener noreferrer">prog-8</a></p>
+                    <p><a href="https://paiza.jp/works" target="_blank" rel="noopener noreferrer">paiza</a></p>
+                    <p><a href="https://dotinstall.com/" target="_blank" rel="noopener noreferrer">dotinstall</a></p>
+                    <p><a href="https://djangobrothers.com/" target="_blank" rel="noopener noreferrer">DjangoBrothers</a></p>
+                    <p>・本</p>
+                    <p><a href="https://www.amazon.co.jp/%E8%A9%B3%E7%B4%B0-Python-%E5%85%A5%E9%96%80%E3%83%8E%E3%83%BC%E3%83%88-%E5%A4%A7%E9%87%8D-%E7%BE%8E%E5%B9%B8/dp/4800711673" target="_blank" rel="noopener noreferrer">詳細-Python-入門ノート-</a></p>
+                    <p><a href="https://www.amazon.co.jp/1%E5%86%8A%E3%81%A7%E3%81%99%E3%81%B9%E3%81%A6%E8%BA%AB%E3%81%AB%E3%81%A4%E3%81%8FHTML-CSS%E3%81%A8Web%E3%83%87%E3%82%B6%E3%82%A4%E3%83%B3%E5%85%A5%E9%96%80%E8%AC%9B%E5%BA%A7-Mana/dp/4797398892" target="_blank" rel="noopener noreferrer">1冊ですべて身につくHTML-CSSとWebデザイン入門講座</a></p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portforio wrapper shadow">
+        <a name="portforio">
+            <h2 class="page-title">ポートフォリオ</h2>
+        </a>
+        <div class="portforio-main">
+            <div class="portforio-container">
+                <a href="">
+                    <img src="{% static 'image/kingyo.jpg' %}" alt="">
+                    <p>ブログ</p>
+                </a>
+            </div>
+
+            <div class="portforio-container">
+                <a href="">
+                    <img src="{% static 'image/neko.jpg' %}" alt="">
+                    <p>EC site</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="contact wrapper shadow">
+        <a name="contact">
+            <h2 class="page-title">コンタクト</h2>
+        </a>
+        <div class="contact-main">
+            <div class="contact-container">
+                <a href="https://twitter.com/igrimro" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-twitter contact-icon"></i>
+                    <p>twitter</p>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="https://github.com/takatoaihara" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github contact-icon"></i>
+                    <p>github</p>
+                </a>
+            </div>
+            <div class="contact-container">
+                <a href="https://www.facebook.com/grimro92" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-facebook-square contact-icon"></i>
+                    <p>facebook</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-text">
+                <p>Created by Takato Aihara</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
