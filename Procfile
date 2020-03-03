@@ -1,1 +1,1 @@
-web: gunicorn aiharatakatoportforio.wsgi --log-file -
+web: gunicorn example.wsgi --log-file -

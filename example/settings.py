@@ -127,47 +127,14 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-STATIC_ROOT = os.path.join(BASE_DIR, 'example/static')
 
-from socket import gethostname
-hostname = gethostname()
+DEBUG = False
 
-if "ta09a" in hostname:
-    # デバッグ環境
-    DEBUG = True
+try:
+    from .local_settings import *
+except ImportError:
+    pass
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
-    }
-
-    ALLOWED_HOSTS = []
-else:
-    # 本番環境
-    DEBUG = True
-    LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'handlers': {
-            'console': {
-                'class': 'logging.StreamHandler',
-            },
-        },
-        'loggers': {
-            'django': {
-                'handlers': ['console'],
-                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
-            },
-        },
-    }
-
-    # DB設定
-    import dj_database_url
-    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
-    db_from_env = dj_database_url.config()
-    DATABASES = {
-        'default': dj_database_url.config()
-    }
-    ALLOWED_HOSTS = ['*']
+if not DEBUG:
+    import django_heroku
+    django_heroku.settings(locals())
