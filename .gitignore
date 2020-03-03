@@ -1,6 +1,7 @@
-gpenv
+*.pyc
+*~
 __pycache__
-staticfiles
-local_settings.py
+gpenv
 db.sqlite3
-*.py[co]
+/static
+.DS_Store
