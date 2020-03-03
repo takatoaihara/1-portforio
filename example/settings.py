@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,6 +70,12 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'example.wsgi.application'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES = {
+    'default': dj_database_url.config()
+}
 
 
 # Database
@@ -120,14 +127,47 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'example/static')
 
-DEBUG = False
+from socket import gethostname
+hostname = gethostname()
 
-try:
-    from .local_settings import *
-except ImportError:
-    pass
+if "ta09a" in hostname:
+    # デバッグ環境
+    DEBUG = True
 
-if not DEBUG:
-    import django_heroku
-    django_heroku.settings(locals())
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+
+    ALLOWED_HOSTS = []
+else:
+    # 本番環境
+    DEBUG = True
+    LOGGING = {
+        'version': 1,
+        'disable_existing_loggers': False,
+        'handlers': {
+            'console': {
+                'class': 'logging.StreamHandler',
+            },
+        },
+        'loggers': {
+            'django': {
+                'handlers': ['console'],
+                'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            },
+        },
+    }
+
+    # DB設定
+    import dj_database_url
+    PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+    db_from_env = dj_database_url.config()
+    DATABASES = {
+        'default': dj_database_url.config()
+    }
+    ALLOWED_HOSTS = ['*']
