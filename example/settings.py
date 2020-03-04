@@ -70,11 +70,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'example.wsgi.application'
 
-import dj_database_url
-db_from_env = dj_database_url.config()
-DATABASES = {
-    'default': dj_database_url.config()
-}
+
 
 
 # Database
